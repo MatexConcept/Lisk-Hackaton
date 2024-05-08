@@ -1,0 +1,43 @@
+import React from "react";
+
+const ICOTokens = () => {
+  return (
+    <section className="medium-padding100">
+    <div className="container">
+      <div className="row align-center" id="started">
+        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div className="crumina-module crumina-module-slider pagination-bottom-center">
+
+              <div className="swiper-container" data-show-items='3' data-prev-next='1'>
+                  <div className="new_flex">
+                    <div className="swiper-slide">
+                        <div className="crumina-module curmina-pricing-table pricing-table--small">
+                          <div className="pricing-thumb">
+                            <img src="img/if_Bitcoin_2745023.png"
+                              className="woox-icon"
+                              alt=""
+                            />
+                            <h5 className="pricing-title">Bitcoin <span>BTC</span></h5>
+
+                            <div className="gain-drop-arrow">
+                                <svg className="woox-icon icon-arrow-up arrow-up active">
+                                  <use xlinkHref="#icon-arrow-down">
+
+                                  </use>
+                                </svg>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+
+              </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  )
+};
+
+export default ICOTokens;
