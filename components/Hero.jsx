@@ -3,11 +3,11 @@ import React from "react";
 const Hero = ({transferNativeToken}) => {
   return (
     <section data-settings="particles-1"
-    className="main-section curmina-flying-balls particles-js bg-1">
+    className="main-section crumina-flying-balls particles-js bg-1">
       <div className="container">
           <div className="row medium-padding120 align-center">
             <div className="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
-              <header className="crumina-module curmina-heading heading--h2 heading--with-decoration">
+              <header className="crumina-module crumina-heading heading--h2 heading--with-decoration">
                     <div className="heading-sup-title">
                           Coin Market
                     </div>
