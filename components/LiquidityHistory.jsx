@@ -86,76 +86,93 @@ const LiquidityHistory = ({ GET_ALL_LIQUIDITY }) => {
 
                       <td>
                         <div className="currency-details-item">
-                          <div 
-                          onClick={() => (
-                            navigator.clipboard.writeText(
-                              liquidity?.tokenA_Address
-                            )
-                          )}
-                          className="value c-primary"
-                          >
-                              {shortenAddress(liquidity?.tokenA_Address)}
-                          </div>
-                        </div>
-                      </td>
-
-                      <td>
-                        <div className="currency-details-item">
-                          <div 
-                          onClick={() => (
-                            navigator.clipboard.writeText(
-                              liquidity?.tokenB_Address
-                            )
-                          )}
-                          className={`value ${index % 2 === 0 ? "c-green-success" : "c-red-light"} `}
-                          >
-                              {shortenAddress(liquidity?.tokenB_Address)}
-                          </div>
-                        </div>
-                      </td>
-
-                      <td>
-                        <div className="currency-details-item">
-                          <div 
-                          onClick={() => (
-                            navigator.clipboard.writeText(
-                              liquidity?.poolAddress
-                            )
-                          )}
-                          className={`value `}
-                          >
-                              {shortenAddress(liquidity?.poolAddress)}
-                          </div>
-                        </div>
-                      </td>
-
-                      <td>
-                        <div className="currency-details-item">
-                          <div 
-                          className={`value `}
-                          >
-                            {
-                              new Date(liquidity?.timeCreated * 1000).toDateString()
+                          <div
+                            onClick={() =>
+                              navigator.clipboard.writeText(
+                                liquidity?.tokenA_Address
+                              )
                             }
+                            className="value c-primary"
+                          >
+                            {shortenAddress(liquidity?.tokenA_Address)}
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div className="currency-details-item">
+                          <div
+                            onClick={() =>
+                              navigator.clipboard.writeText(
+                                liquidity?.tokenB_Address
+                              )
+                            }
+                            className={`value ${
+                              index % 2 === 0
+                                ? "c-green-success"
+                                : "c-red-light"
+                            } `}
+                          >
+                            {shortenAddress(liquidity?.tokenB_Address)}
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div className="currency-details-item">
+                          <div
+                            onClick={() =>
+                              navigator.clipboard.writeText(
+                                liquidity?.poolAddress
+                              )
+                            }
+                            className={`value `}
+                          >
+                            {shortenAddress(liquidity?.poolAddress)}
+                          </div>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div className="currency-details-item">
+                          <div className={`value `}>
+                            {new Date(
+                              liquidity?.timeCreated * 1000
+                            ).toDateString()}
                           </div>
                         </div>
                       </td>
                       <td>
-                        <a href={
-                          liquidity?.network == "80001"
-                                ? ""
-                                : liquidity?.network == "157"
-                                ? ""
-                                : liquidity?.network == "1"
-                                ? ""
-                                : liquidity?.network == ""
-                                ? ""
-                                : ""
-                        }> Hash </a>
+                        <a
+                          href={
+                            liquidity?.network == "80001"
+                              ? `https://sepolia-blockscout.lisk.com/${liquidity?.transactionHash}`
+                              : liquidity?.network == "157"
+                              ? `https://etherscan.io/tx/${liquidity?.transactionHash}`
+                              : liquidity?.network == "1"
+                              ? `https://goerli.etherscan.io/tx/${liquidity?.transactionHash}`
+                              : liquidity?.network == ""
+                              ? `https://sepolia.etherscan.io/tx/${liquidity?.transactionHash}`
+                              : `https://mumbai.polygonscan.com/tx/${liquidity?.transactionHash}`
+                          }
+                          target="_blank"
+                          className="btn btn--small btn--green-light"
+                        >
+                          {" "}
+                          Hash{" "}
+                        </a>
                       </td>
                     </tr>
                   ))}
                 </tbody>
+
+                <tfoot>
+                  <tr>
+                    <td colSpan={'8'}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt repudiandae aspernatur voluptate recusandae sequi beatae fugit laborum? Est itaque officia voluptates dolorem minima quam cumque!
+                    </td>
+                  </tr>
+                </tfoot>
               </table>
             </div>
           </div>
